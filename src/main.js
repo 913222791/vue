@@ -3,11 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/router'
-import Button from './router/views/button'
-
 
 Vue.config.productionTip = false
-Vue.use(Button)
 
 /* eslint-disable no-new */
 new Vue({

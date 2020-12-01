@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import PageA from './views/PageA'
 import PageB from './views/PageB'
 import PageC from './views/PageC'
-import button from './views/button'
 
 Vue.use(Router)
 
@@ -13,7 +12,7 @@ export default new Router({
       path: '/',
       name: '/pageB'
     }, {
-      path: '/pageA/:id/:name',
+      path: '/pageA/123/vue',
       name: 'pageA',
       component: PageA
     }, {
@@ -25,10 +24,6 @@ export default new Router({
       name: 'pageC',
       props: true,
       component: PageC
-    }, {
-      path: '/button',
-      name: 'button',
-      component: button
-    }
+    }, 
   ]
 })

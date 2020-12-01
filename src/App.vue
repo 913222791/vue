@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/pageA/5188">pageA</router-link>
+      <router-link to="/pageA/123/vue">pageA</router-link>
       <router-link to="/pageB">pageB</router-link>
       <router-link to="/pageC">pageC</router-link>
       <Button>123</Button>
@@ -11,7 +11,7 @@
 </template>
 <script>
 
-import Button from './router/views/button'
+import Button from '@/components/button'
 export default {
   name: 'App',
   components: {

@@ -24,7 +24,7 @@
 </template>
 <script>
 
-import './button.scss'
+import '@/style/button.scss'
 
 export default {
     name: 'ElButton',
