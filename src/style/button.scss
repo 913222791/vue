@@ -1,4 +1,31 @@
-$link-color: red;
-a {
-color: $link-color;
+@charset "UTF-8";
+@import "./common/var.scss";
+@import "./mixins/mixins.scss";
+@import "./mixins/utils.scss";
+@import "./mixins/_button.scss";
+
+
+@include b(button) {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: $--button-default-background-color;
+    border: $--border-base;
+    border-color: $--button-default-background-color;
+    color: $--button-default-font-color;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition: .1s;
+    font-weight: $--button-font-weight;
+
+    @include utils-user-select(none);
+    & + & {
+        margin-left: 10px;
+    }
+
+    
 }
