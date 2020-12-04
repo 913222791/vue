@@ -5,6 +5,7 @@
       <router-link to="/pageB">pageB</router-link>
       <router-link to="/pageC">pageC</router-link>
       <Button>123</Button>
+      <Button type="primary" :loading="true">加载中</Button>
     </div>
     <router-view/>
   </div>
