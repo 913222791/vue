@@ -12,19 +12,31 @@
       <Link href="https://element.eleme.io" type="warning" :underline="false">警告链接</Link>
       <Link type="danger" disabled>危险链接</Link>
       <Link type="info" disabled>信息链接</Link>
+      <Container style="height: 500px; border: 1px solid red">
+  <Header>Header</Header>
+  <Main>Main</Main>
+    <Main>Main</Main>
+      </Container>
     </div>
     <router-view/>
   </div>
 </template>
 <script>
 
+import Container from '@/components/container'
 import Link from '@/components/link'
 import Button from '@/components/button'
+import Header from '@/components/header'
+import Main from '@/components/main'
+
 export default {
   name: 'App',
   components: {
     Button,
     Link,
+    Container,
+    Header,
+    Main,
   }
 }
 </script>
