@@ -13,10 +13,19 @@
       <Link type="danger" disabled>危险链接</Link>
       <Link type="info" disabled>信息链接</Link>
       <Container style="height: 500px; border: 1px solid red">
-  <Header>Header</Header>
-  <Main>Main</Main>
-    <Main>Main</Main>
+      <Header>Header</Header>
+      <Footer>Footer</Footer>
+      <Main>Main</Main>
+      <Header>Header</Header>
+      <Main>Main</Main>
+      <Footer>Footer</Footer>
       </Container>
+      <Radio disabled v-model="radio" label="禁用">备选项</Radio>
+      <Radio v-model="radio" label="１">备选项</Radio>
+      <RadioButton label="上海" ></RadioButton>
+      <RadioButton label="北京"></RadioButton>
+      <RadioButton label="广州"></RadioButton>
+      <RadioButton label="深圳" border></RadioButton>
     </div>
     <router-view/>
   </div>
@@ -28,6 +37,11 @@ import Link from '@/components/link'
 import Button from '@/components/button'
 import Header from '@/components/header'
 import Main from '@/components/main'
+import Footer from '@/components/footer'
+import Radio from '@/components/radio.vue'
+import RadioButton from '@/components/radio-button.vue'
+import RadioGroup from '@/components/radio-group'
+
 
 export default {
   name: 'App',
@@ -37,6 +51,10 @@ export default {
     Container,
     Header,
     Main,
+    Footer,
+    Radio,
+    RadioButton,
+    RadioGroup,
   }
 }
 </script>
