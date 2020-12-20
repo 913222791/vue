@@ -25,7 +25,8 @@
       <RadioButton label="上海" ></RadioButton>
       <RadioButton label="北京"></RadioButton>
       <RadioButton label="广州"></RadioButton>
-      <RadioButton label="深圳" border></RadioButton>
+      <RadioButton label="深圳" ></RadioButton>
+      <Checkbox v-model="checked2">备选项</Checkbox>
     </div>
     <router-view/>
   </div>
@@ -38,10 +39,10 @@ import Button from '@/components/button'
 import Header from '@/components/header'
 import Main from '@/components/main'
 import Footer from '@/components/footer'
-import Radio from '@/components/radio.vue'
-import RadioButton from '@/components/radio-button.vue'
-import RadioGroup from '@/components/radio-group'
-
+import Radio   from './components/radio'
+import RadioButton from './components/radio-button.vue'
+import RadioGroup from './components/radio-group'
+import Checkbox from './components/checkbox'
 
 export default {
   name: 'App',
@@ -55,7 +56,14 @@ export default {
     Radio,
     RadioButton,
     RadioGroup,
-  }
+    Checkbox
+  },
+
+  data() {
+      return {
+        checked: true
+      };
+    }
 }
 </script>
 
