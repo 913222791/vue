@@ -27,6 +27,39 @@
       <RadioButton label="广州"></RadioButton>
       <RadioButton label="深圳" ></RadioButton>
       <Checkbox v-model="checked2">备选项</Checkbox>
+      <Checkbox v-model="checked1" disabled>备选项２</Checkbox>
+      
+      <Checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</Checkbox>
+      <div style="margin: 15px 10px;"></div>
+      <Checkbox v-for="city in cities" :label="city" :key="city">{{city}}</Checkbox>
+
+
+      <div>
+      <CheckboxGroup v-model="checkboxGroup1">
+      <CheckboxButton v-for="city in cities" :label="city" :key="city">{{city}}</CheckboxButton>
+      </CheckboxGroup>
+      </div>
+      <div style="margin-top: 20px">
+      <CheckboxGroup v-model="checkboxGroup2" size="medium">
+      <CheckboxButton v-for="city in cities" :label="city" :key="city" >{{city}}</CheckboxButton>
+      </CheckboxGroup>
+      </div>
+      <div style="margin-top: 20px">
+      <CheckboxGroup v-model="checkboxGroup3" size="small">
+      <CheckboxButton v-for="city in cities" :label="city" :disabled="city === '北京'" :key="city">{{city}}</CheckboxButton>
+      </CheckboxGroup>
+      </div>
+      <div style="margin-top: 20px">
+      <CheckboxGroup v-model="checkboxGroup4" size="mini" disabled>
+      <CheckboxButton v-for="city in cities" :label="city" :key="city">{{city}}</CheckboxButton>
+      </CheckboxGroup>
+      </div>
+      
+      <div style="margin-top: 20px">
+      <Checkbox v-model="checked3" label="备选项1" border size="medium"></Checkbox>
+      <Checkbox v-model="checked4" label="备选项2" border size="mini"></Checkbox>
+      </div>
+
     </div>
     <router-view/>
   </div>
@@ -43,7 +76,11 @@ import Radio   from './components/radio'
 import RadioButton from './components/radio-button.vue'
 import RadioGroup from './components/radio-group'
 import Checkbox from './components/checkbox'
+import CheckboxButton from './components/checkbox-button.vue'
+import CheckboxGroup from './components/checkbox-group'
 
+
+const cityOptions = ['上海', '北京', '广州', '深圳'];
 export default {
   name: 'App',
   components: {
@@ -56,15 +93,28 @@ export default {
     Radio,
     RadioButton,
     RadioGroup,
-    Checkbox
+    Checkbox,
+    CheckboxButton,
+    CheckboxGroup
   },
 
   data() {
       return {
-        checked: true
+        checkAll:false,
+        checked1:false,
+        checked2: true,
+        checkAll: false,
+        cities:cityOptions,
+        isIndeterminate: true,
+         checkboxGroup1: ['上海'],
+        checkboxGroup2: ['上海'],
+        checkboxGroup3: ['上海'],
+        checkboxGroup4: ['上海'],
+        checked3: true
+        
       };
     }
-}
+};
 </script>
 
 <style>
@@ -74,6 +124,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

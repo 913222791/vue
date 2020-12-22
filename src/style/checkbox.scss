@@ -173,7 +173,7 @@
 
                 &::before {
                     content: '';
-                    position: block;
+                    position: absolute;
                     display: block;
                     background-color: $--checkbox-checked-icon-color;
                     height: 2px;

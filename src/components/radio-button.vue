@@ -36,7 +36,7 @@
 </template>
 <script>
 import Emitter from '../style/mixins/emitter';
-
+import '@/style/radio-button.scss';
 export default {
     name: 'ElRadioButton',
 
